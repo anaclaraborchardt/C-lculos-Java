@@ -171,6 +171,7 @@ public class Main {
         FormaGeometrica forma = new FormaGeometrica(area, perimetro, null, null,
                 new Quadrado(lado1), null);
         FormaGeometrica.cadastroFormas(forma);
+        //FormaGeometrica.cadastroFormas(new Quadrado(lado1));
     }
     public static void logout(){
         int tentativas = 0;
