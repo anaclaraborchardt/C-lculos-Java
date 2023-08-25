@@ -8,17 +8,11 @@ public class Retangulo extends FormaGeometrica {
         this.lado2 = lado2;
     }
 
-    public double getLado1() {
-        return lado1;
-    }
-
-    public double getLado2() {
-        return lado2;
-    }
-
     @Override
     public String toString() {
         return "Retangulo{" +
+                "area='" + area + '\'' +
+                "perímetro='" + perimetro + '\'' +
                 "lado 1='" + lado1 + '\'' +
                 ", lado 2=" + lado2 +
                 '}';
@@ -31,24 +25,24 @@ public class Retangulo extends FormaGeometrica {
         return existe;
     }
 
+    @Override
     public double calculoPerimetro() {
         perimetro = (2*lado1) + (2*lado2);
         return perimetro;
     }
 
+    @Override
     public double calculoArea(){
         area = lado1*lado2;
         return area;
     }
 
-    public static void listarRetangulo() {
+    public static FormaGeometrica listarRetangulo(){
         for (FormaGeometrica forma : FormaGeometrica.todasFormas) {
-            if (forma.getRetangulo() != null) {
-                System.out.println("Retângulo - Área: " + forma.getArea() + ", Perímetro: " + forma.getPerimetro());
-                System.out.println("Lado1: " + forma.getRetangulo().getLado1() + "," +
-                        "Lado2: " + forma.getRetangulo().getLado2());
+            if (forma instanceof Retangulo) {
+                return forma;
             }
         }
+        return null;
     }
-
 }

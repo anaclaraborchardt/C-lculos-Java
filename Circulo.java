@@ -4,24 +4,18 @@ public class Circulo extends FormaGeometrica {
     double diametro;
 
     public Circulo(double raio, double diametro) {
+        super();
 
         this.raio = raio;
         this.diametro = diametro;
-    }
 
-    public double getRaio() {
-        return raio;
-    }
-
-
-    public double getDiametro() {
-        return diametro;
     }
 
     public Circulo() {
 
     }
 
+    @Override
     public double calculoPerimetro() {
         if (raio != 0) {
             perimetro = 3.14 * 2 * raio;
@@ -31,6 +25,7 @@ public class Circulo extends FormaGeometrica {
         return perimetro;
     }
 
+    @Override
     public double calculoArea() {
         if (raio == 0) {
             raio = diametro / 2;
@@ -39,12 +34,12 @@ public class Circulo extends FormaGeometrica {
         return area;
     }
 
-    public static void listarCirculo() {
+    public static FormaGeometrica listarCirculo(){
         for (FormaGeometrica forma : FormaGeometrica.todasFormas) {
-            if (forma.getCirculo() != null) {
-                System.out.println("Círculo - Área: " + forma.getArea() + ", Perímetro: " + forma.getPerimetro());
-                System.out.println("Raio: " + forma.getCirculo().getRaio() + ", Diâmetro: " + forma.getCirculo().getDiametro());
+            if (forma instanceof Circulo) {
+                return forma;
             }
         }
+        return null;
     }
 }

@@ -3,8 +3,14 @@ public class Equilatero extends Triangulo{
         super(lado1, lado2, lado3);
     }
 
-    public  double calculoEquilatero(){
-        area = (Math.sqrt(3)/4) * (lado1*lado1);
+
+    @Override
+    public double calculoArea() {
+        if(verificarLados()) {
+            if (lado1 == lado2 && lado2 == lado3) {
+                area = (Math.sqrt(3) / 4) * (lado1 * lado1);
+            }
+        }
         return area;
     }
 }

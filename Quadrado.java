@@ -9,29 +9,30 @@ public class Quadrado extends FormaGeometrica {
     @Override
     public String toString() {
         return "Quadrado{" +
+                "area='" + area + '\'' +
+                "perímetro='" + perimetro + '\'' +
                 ", lado 1=" + lado1 +
                 '}';
     }
 
-    public double getLado1() {
-        return lado1;
-    }
-
+    @Override
     public double calculoPerimetro() {
         perimetro = (4*lado1);
         return perimetro;
     }
 
+    @Override
     public double calculoArea(){
         area = lado1 * lado1;
         return area;
     }
-    public static void listarQuadrado() {
+
+    public static FormaGeometrica listarQuadrado(){
         for (FormaGeometrica forma : FormaGeometrica.todasFormas) {
-            if (forma.getQuadrado() != null) {
-                System.out.println("Quadrado - Área: " + forma.getArea() + ", Perímetro: " + forma.getPerimetro());
-                System.out.println("Lado: " + forma.getQuadrado().getLado1());
+            if (forma instanceof Quadrado) {
+                return forma;
             }
         }
+        return null;
     }
 }

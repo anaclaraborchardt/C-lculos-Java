@@ -3,15 +3,14 @@ public class Escaleno extends Triangulo {
         super(lado1, lado2, lado3);
     }
 
-    double semiperimetro;
-
-    public double calculoEscaleno(){
-
-        semiperimetro = calculoPerimetro()/2;
-        area = Math.sqrt(semiperimetro*(semiperimetro - lado1) *
-                (semiperimetro - lado2) * (semiperimetro - lado3));
+    @Override
+    public double calculoArea() {
+        if(verificarLados()) {
+            if (lado1 == lado2 && lado2 == lado3) {
+                area = (Math.sqrt(3) / 4) * (lado1 * lado1);
+            }
+        }
         return area;
-
-        //Área = √semiperimetro. (semiperimetro − lado1). (semiperimetro − lado2). (semiperimetro − lado3)
     }
+
 }
