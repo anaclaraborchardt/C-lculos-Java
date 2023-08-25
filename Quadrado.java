@@ -3,7 +3,9 @@ public class Quadrado extends FormaGeometrica {
 
     double lado1;
 
-    public Quadrado(double lado1){
+    public Quadrado(double area, double perimetro,double lado1){
+        this.area = area;
+        this.perimetro = perimetro;
         this.lado1 = lado1;
     }
     @Override

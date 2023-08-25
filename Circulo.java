@@ -3,9 +3,10 @@ public class Circulo extends FormaGeometrica {
     double raio;
     double diametro;
 
-    public Circulo(double raio, double diametro) {
+    public Circulo(double area, double perimetro, double raio, double diametro) {
         super();
-
+        this.area = area;
+        this.perimetro = perimetro;
         this.raio = raio;
         this.diametro = diametro;
 

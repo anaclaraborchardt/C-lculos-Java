@@ -1,6 +1,6 @@
 public class Escaleno extends Triangulo {
-    public Escaleno(double lado1, double lado2, double lado3) {
-        super(lado1, lado2, lado3);
+    public Escaleno(double area, double perimetro, double lado1, double lado2, double lado3) {
+        super(area, perimetro, lado1, lado2, lado3);
     }
 
     @Override
@@ -12,5 +12,6 @@ public class Escaleno extends Triangulo {
         }
         return area;
     }
+
 
 }

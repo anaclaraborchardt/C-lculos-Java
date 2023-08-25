@@ -77,12 +77,12 @@ public class Main {
             case 1:
                 System.out.println("Digite o raio:");
                 double raio = sc.nextDouble();
-                circulo = new Circulo(raio, 0);
+                circulo = new Circulo(area, perimetro, raio, 0);
                 break;
             case 2:
                 System.out.println("Digite o diâmetro:");
                 double diametro = sc.nextDouble();
-                circulo = new Circulo(0, (int) diametro);
+                circulo = new Circulo(area, perimetro, 0, diametro);
                 break;
             default:
                 System.out.println("Opção Inválida");
@@ -103,23 +103,24 @@ public class Main {
         double lado3 = sc.nextDouble();
 
         if (lado1 == lado2 || lado2 == lado3 || lado3 == lado1) {
-            Isoceles isoceles = new Isoceles(lado1, lado2, lado3);
+            Isoceles isoceles = new Isoceles(area, perimetro, lado1, lado2, lado3);
                 area = isoceles.calculoArea();
                 perimetro = isoceles.calculoPerimetro();
-            FormaGeometrica.cadastroFormas(new Isoceles(lado1, lado2, lado3));
+            FormaGeometrica.cadastroFormas(new Isoceles(area, perimetro, lado1, lado2, lado3));
         } else if (lado1 == lado2 && lado2 == lado3) {
-            Equilatero equilatero = new Equilatero(lado1, lado2, lado3);
-            FormaGeometrica.cadastroFormas(new Equilatero(lado1, lado2, lado3));
+            Equilatero equilatero = new Equilatero(area, perimetro, lado1, lado2, lado3);
             area = equilatero.calculoArea();
             perimetro = equilatero.calculoPerimetro();
+            FormaGeometrica.cadastroFormas(new Equilatero(area, perimetro, lado1, lado2, lado3));
         } else {
-            Escaleno escaleno = new Escaleno(lado1, lado2, lado3);
-                FormaGeometrica.cadastroFormas(new Escaleno(lado1, lado2, lado3));
+            Escaleno escaleno = new Escaleno(area, perimetro, lado1, lado2, lado3);
             area = escaleno.calculoArea();
             perimetro = escaleno.calculoPerimetro();
+                FormaGeometrica.cadastroFormas(new Escaleno(area, perimetro, lado1, lado2, lado3));
         }
         System.out.println("A área é " + area);
         System.out.println("O perímetro é " + perimetro);
+        System.out.println(Triangulo.classificacao(lado1,lado2,lado3));
 
     }
 
@@ -129,27 +130,27 @@ public class Main {
         System.out.println("Lado 2:");
         double lado2= sc.nextDouble();
 
-            Retangulo retangulo = new Retangulo(lado1, lado2);
+            Retangulo retangulo = new Retangulo(area, perimetro, lado1, lado2);
 
             perimetro = retangulo.calculoPerimetro();
             System.out.println("O perímetro é " + perimetro);
             area = retangulo.calculoArea();
             System.out.println("A área é " + area);
-            FormaGeometrica.cadastroFormas(new Retangulo(lado1, lado2));
+            FormaGeometrica.cadastroFormas(new Retangulo(area, perimetro, lado1, lado2));
         }
 
     public static void quadrado(){
         System.out.println("Lado 1:");
         double lado1= sc.nextDouble();
 
-        Quadrado quadrado = new Quadrado(lado1);
+        Quadrado quadrado = new Quadrado(area, perimetro, lado1);
 
         perimetro = quadrado.calculoPerimetro();
         System.out.println("O perímetro é " + perimetro);
         area = quadrado.calculoArea();
         System.out.println("A área é " + area);
 
-        FormaGeometrica.cadastroFormas(new Quadrado(lado1));
+        FormaGeometrica.cadastroFormas(new Quadrado(area, perimetro, lado1));
     }
 
     public static void logout(){
@@ -189,7 +190,5 @@ public class Main {
             case 4-> System.out.println(Quadrado.listarQuadrado());
             case 5-> System.out.println(FormaGeometrica.listarTodasFormas());
         }
-
   }
-
 }

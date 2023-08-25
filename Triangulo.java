@@ -6,8 +6,10 @@ public abstract class Triangulo extends FormaGeometrica {
     double lado3;
 
 
-    public Triangulo(double lado1, double lado2, double lado3) {
+    public Triangulo(double area, double perimetro, double lado1, double lado2, double lado3) {
         super();
+        this.area = area;
+        this.perimetro = perimetro;
         this.lado1 = lado1;
         this.lado2 = lado2;
         this.lado3 = lado3;
@@ -46,11 +48,11 @@ public abstract class Triangulo extends FormaGeometrica {
 
     public static String classificacao(double lado1, double lado2, double lado3) {
         if (lado1 == lado2 && lado3!=lado1|| lado2 == lado3 && lado2!=lado1|| lado3 == lado1 && lado2!=lado3) {
-            return "isóceles";
+            return "Isóceles";
         } else if (lado1 == lado2 && lado2 == lado3) {
-            return "equilátero";
+            return "Equilátero";
         } else {
-            return "escaleno";
+            return "Escaleno";
         }
     }
 
@@ -65,7 +67,7 @@ public abstract class Triangulo extends FormaGeometrica {
 
     @Override
     public double calculoArea() {
-        return 0;
+        return area;
     }
 }
 

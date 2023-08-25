@@ -1,6 +1,6 @@
 public class Equilatero extends Triangulo{
-    public Equilatero(double lado1, double lado2, double lado3) {
-        super(lado1, lado2, lado3);
+    public Equilatero(double area, double perimetro, double lado1, double lado2, double lado3) {
+        super(area, perimetro, lado1, lado2, lado3);
     }
 
 
@@ -13,4 +13,5 @@ public class Equilatero extends Triangulo{
         }
         return area;
     }
+
 }

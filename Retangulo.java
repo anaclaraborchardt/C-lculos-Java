@@ -1,9 +1,13 @@
 public class Retangulo extends FormaGeometrica {
 
-    double lado1;
-    double lado2;
+    private double lado1;
+    private double lado2;
 
-    public Retangulo(double lado1, double lado2){
+    public Retangulo(double area, double perimetro, double lado1, double lado2){
+        this.area = area;
+        this.perimetro = perimetro;
+        this.area = area;
+        this.perimetro = perimetro;
         this.lado1 = lado1;
         this.lado2 = lado2;
     }
@@ -33,7 +37,9 @@ public class Retangulo extends FormaGeometrica {
 
     @Override
     public double calculoArea(){
-        area = lado1*lado2;
+        if(verificarLadosRetangulo()) {
+            area = lado1 * lado2;
+        }
         return area;
     }
 

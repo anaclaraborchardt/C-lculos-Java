@@ -1,9 +1,10 @@
 
 public class Isoceles extends Triangulo {
 
-    public Isoceles(double lado1, double lado2, double lado3) {
-        super(lado1, lado2, lado3);
+    public Isoceles(double area, double perimetro, double lado1, double lado2, double lado3) {
+        super(area, perimetro, lado1, lado2, lado3);
     }
+
 
     @Override
     public double calculoArea() {
@@ -14,6 +15,7 @@ public class Isoceles extends Triangulo {
         }
         return area;
     }
+
 
 
 
